@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#05030A"
+    android:background="@drawable/bg_main_gradient"
+    android:clipToPadding="false"
     android:fillViewport="true"
     android:overScrollMode="never">
 
@@ -11,28 +12,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingLeft="16dp"
+        android:paddingTop="18dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="28dp">
 
         <!-- HEADER: CYBERPUNK TITLE -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="58dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_card"
-            android:padding="12dp"
-            android:backgroundTint="#110B1F">
+            android:orientation="horizontal">
 
             <FrameLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="12dp"
-                android:background="@drawable/bg_avatar_frame">
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_avatar_frame"
+                android:padding="4dp">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="6dp"
                     android:src="@drawable/ic_launcher_meow" />
             </FrameLayout>
 
@@ -41,489 +42,903 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.1"
                     android:text="MINIZO MOD"
                     android:textColor="#ec4899"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:shadowColor="#ec4899"
-                    android:shadowRadius="15"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:fontFamily="sans-serif-black"
-                    android:letterSpacing="0.1" />
+                    android:shadowRadius="15" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
                     android:text="// SYSTEM v1.101"
                     android:textColor="#06b6d4"
-                    android:textSize="11sp"
+                    android:textSize="10sp"
                     android:textStyle="bold"
                     android:fontFamily="monospace" />
             </LinearLayout>
-
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VIP"
+                android:text="ULTRA VIP"
                 android:background="@drawable/bg_top_action"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
                 android:textColor="#fbbf24"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- CARD: QUYỀN TRUY CẬP -->
+        <!-- QUYỀN TRUY CẬP -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="14dp"
-            android:backgroundTint="#110B1F">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:text="[ QUYỀN TRUY CẬP ]"
                 android:textColor="#10b981"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
-                android:layout_marginBottom="12dp"
                 android:shadowColor="#10b981"
-                android:shadowRadius="10" />
+                android:shadowRadius="8" />
 
-            <!-- Item 1: Float Overlay -->
+            <!-- Hiển thị nút nổi -->
             <LinearLayout
                 android:id="@+id/btn_perm_display"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="10dp"
+                android:layout_marginBottom="16dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:layout_marginBottom="8dp">
-                <TextView
-                    android:layout_width="24dp"
-                    android:layout_height="wrap_content"
-                    android:text="♟"
-                    android:textColor="#10b981"
-                    android:textSize="20sp"
-                    android:gravity="center"/>
-                <TextView
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_feature_icon_green">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="♟"
+                        android:textColor="#60F0AE"
+                        android:textSize="18sp" />
+                </FrameLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Hiển thị nút nổi"
-                    android:textColor="#e2e8f0"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="12dp"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hiển thị nút nổi"
+                        android:textColor="#F7F7FB"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Cho phép vẽ lên ứng dụng khác"
+                        android:textColor="#7A8395"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/tv_display_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OFF"
-                    android:textColor="#f43f5e"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_top_action"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#50FFC5"
                     android:textSize="10sp"
-                    android:layout_marginRight="8dp"/>
+                    android:textStyle="bold" />
+
                 <View
                     android:id="@+id/dot_display"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
                     android:background="@drawable/dot_off" />
+
+                <TextView
+                    android:id="@+id/cb_display"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
             </LinearLayout>
 
-            <!-- Item 2: VPN -->
+            <!-- Kết nối VPN -->
             <LinearLayout
                 android:id="@+id/btn_perm_vpn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="10dp"
+                android:layout_marginBottom="16dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:layout_marginBottom="8dp">
-                <TextView
-                    android:layout_width="24dp"
-                    android:layout_height="wrap_content"
-                    android:text="VPN"
-                    android:textColor="#06b6d4"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:gravity="center"/>
-                <TextView
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_feature_icon_green">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="VPN"
+                        android:textColor="#60F0AE"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Kết nối VPN"
-                    android:textColor="#e2e8f0"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="12dp"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kết nối VPN"
+                        android:textColor="#F7F7FB"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Cần thiết để chạy engine"
+                        android:textColor="#7A8395"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/tv_vpn_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OFF"
-                    android:textColor="#f43f5e"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_top_action"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#50FFC5"
                     android:textSize="10sp"
-                    android:layout_marginRight="8dp"/>
+                    android:textStyle="bold" />
+
                 <View
                     android:id="@+id/dot_vpn"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
                     android:background="@drawable/dot_off" />
+
+                <TextView
+                    android:id="@+id/cb_vpn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
             </LinearLayout>
 
-            <!-- Item 3: Notification -->
+            <!-- Nhận thông báo -->
             <LinearLayout
                 android:id="@+id/btn_perm_notif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:background="?android:attr/selectableItemBackground">
-                <TextView
-                    android:layout_width="24dp"
-                    android:layout_height="wrap_content"
-                    android:text="✦"
-                    android:textColor="#ec4899"
-                    android:textSize="20sp"
-                    android:gravity="center"/>
-                <TextView
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_feature_icon_green">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="✦"
+                        android:textColor="#60F0AE"
+                        android:textSize="18sp" />
+                </FrameLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nhận thông báo"
-                    android:textColor="#e2e8f0"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="12dp"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nhận thông báo"
+                        android:textColor="#F7F7FB"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Nhận cảnh báo từ hệ thống"
+                        android:textColor="#7A8395"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/tv_notif_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OFF"
-                    android:textColor="#f43f5e"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_top_action"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#50FFC5"
                     android:textSize="10sp"
-                    android:layout_marginRight="8dp"/>
+                    android:textStyle="bold" />
+
                 <View
                     android:id="@+id/dot_notif"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
                     android:background="@drawable/dot_off" />
+
+                <TextView
+                    android:id="@+id/cb_notif"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
             </LinearLayout>
             
-            <View android:id="@+id/dot_storage" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_storage_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/cb_storage" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+            <View android:id="@+id/dot_storage" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_storage_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/cb_storage" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
         </LinearLayout>
 
-        <!-- GAME SELECTION BUTTONS (NEON STYLE) -->
+        <!-- TOP ACTION BUTTONS (Nút chọn Game) -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="14dp">
+            android:layout_height="42dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/btn_show_floating"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:layout_marginRight="6dp"
                 android:background="@drawable/bg_top_action"
                 android:text="TỰ DO"
                 android:textColor="#06b6d4"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+
             <Button
                 android:id="@+id/btn_ff_normal"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:layout_marginHorizontal="6dp"
                 android:background="@drawable/bg_top_action"
                 android:text="FF NORMAL"
                 android:textColor="#06b6d4"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+
             <Button
                 android:id="@+id/btn_ff_max"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="6dp"
                 android:background="@drawable/bg_top_action"
                 android:text="FF MAX"
                 android:textColor="#06b6d4"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
         </LinearLayout>
 
-        <!-- CARD: ENGINE STATUS (CORE) -->
+        <!-- ENGINE CARD (Nút nguồn) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
             android:background="@drawable/bg_card"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="14dp"
-            android:backgroundTint="#0A0518">
-
-            <FrameLayout
-                android:id="@+id/btn_engine"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/bg_power_circle"
-                android:layout_marginRight="16dp">
-                <ImageView
-                    android:id="@+id/iv_engine_power"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_power_button_outline"
-                    android:tint="#f43f5e" />
-            </FrameLayout>
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tv_status"
-                    android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/btn_engine"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/bg_power_circle">
+
+                    <ImageView
+                        android:id="@+id/iv_engine_power"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="18dp"
+                        android:src="@drawable/ic_power_button_outline"
+                        android:tint="#f43f5e" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="DISCONNECTED"
-                    android:textColor="#f43f5e"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="monospace"
-                    android:shadowColor="#f43f5e"
-                    android:shadowRadius="12" />
-                <TextView
-                    android:id="@+id/tv_selected_app"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TARGET AWAITING"
-                    android:textColor="#64748b"
-                    android:textSize="11sp"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="monospace" />
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/engine_status_disconnected"
+                        android:textColor="#f43f5e"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:shadowColor="#f43f5e"
+                        android:shadowRadius="10" />
+
+                    <TextView
+                        android:id="@+id/tv_selected_app"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/target_awaiting"
+                        android:textColor="#555B71"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dot_engine"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/dot_off" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/dot_engine"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:background="@drawable/dot_off" />
             <View
                 android:id="@+id/dot_app"
                 android:layout_width="0dp"
                 android:layout_height="0dp" />
         </LinearLayout>
 
-        <!-- CARD: NÚT NỔI MODS (NEON GOLD) -->
+        <!-- NÚT NỔI CARD (Các nút tính năng) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_card_gold"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="14dp"
-            android:backgroundTint="#1A1206">
+            android:paddingTop="14dp"
+            android:paddingBottom="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="[ NÚT NỔI MODS ]"
-                android:textColor="#fbbf24"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="monospace"
-                android:layout_marginBottom="12dp"
-                android:shadowColor="#fbbf24"
-                android:shadowRadius="10" />
-
-            <!-- FREEZE -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="58dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="8dp"
-                android:background="#0A0518"
-                android:paddingHorizontal="12dp">
-                <View android:layout_width="8dp" android:layout_height="8dp" android:background="#06b6d4" android:layout_marginRight="10dp"/>
+                android:orientation="horizontal"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp">
+
+                <FrameLayout
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_feature_icon_green">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="♙"
+                        android:textColor="#60F0AE"
+                        android:textSize="20sp" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="[ NÚT NỔI MODS ]"
+                    android:textColor="#fbbf24"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:shadowColor="#fbbf24"
+                    android:shadowRadius="8" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="#102F3341" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
+
+                <View android:layout_width="6dp" android:layout_height="6dp" android:background="#06b6d4" android:layout_marginRight="8dp"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="FREEZE"
                     android:textColor="#06b6d4"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:fontFamily="monospace" />
+
                 <TextView
                     android:id="@+id/cb_float_freeze"
                     style="@style/ModernSwitchSmall" />
             </LinearLayout>
             <TextView android:id="@+id/tv_float_freeze_status" android:layout_width="0dp" android:layout_height="0dp" />
 
-            <!-- GHOST V2 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="8dp"
-                android:background="#0A0518"
-                android:paddingHorizontal="12dp">
-                <View android:layout_width="8dp" android:layout_height="8dp" android:background="#a855f7" android:layout_marginRight="10dp"/>
+                android:orientation="horizontal"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
+
+                <View android:layout_width="6dp" android:layout_height="6dp" android:background="#a855f7" android:layout_marginRight="8dp"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="GHOST V2"
                     android:textColor="#a855f7"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:fontFamily="monospace" />
+
                 <TextView
                     android:id="@+id/cb_float_ghost"
                     style="@style/ModernSwitchSmall" />
             </LinearLayout>
             <TextView android:id="@+id/tv_float_ghost_status" android:layout_width="0dp" android:layout_height="0dp" />
 
-            <!-- TELE INF -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:gravity="center_vertical"
-                android:background="#0A0518"
-                android:paddingHorizontal="12dp">
-                <View android:layout_width="8dp" android:layout_height="8dp" android:background="#fbbf24" android:layout_marginRight="10dp"/>
+                android:orientation="horizontal"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
+
+                <View android:layout_width="6dp" android:layout_height="6dp" android:background="#fbbf24" android:layout_marginRight="8dp"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TELE INF"
                     android:textColor="#fbbf24"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:fontFamily="monospace" />
+
                 <TextView
                     android:id="@+id/cb_float_tele_speed"
                     style="@style/ModernSwitchSmall" />
             </LinearLayout>
             <TextView android:id="@+id/tv_float_tele_speed_status" android:layout_width="0dp" android:layout_height="0dp" />
             
-            <!-- Ẩn -->
-            <TextView android:id="@+id/cb_float_tele_v2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_float_tele_v2_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/cb_float_tele" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_float_tele_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/cb_float_delay_ping" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_float_delay_ping_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <LinearLayout android:id="@+id/group_tele_options" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <LinearLayout android:id="@+id/group_tele_speed_options" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_tele_replay_delay_value" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <SeekBar android:id="@+id/seek_tele_replay_delay" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_tele_speed_burst_value" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <SeekBar android:id="@+id/seek_tele_speed_burst" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_tele_speed_sleep_value" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <SeekBar android:id="@+id/seek_tele_speed_sleep" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_tele_speed_catchup_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/cb_tele_speed_catchup" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+            <!-- Ẩn các view không dùng (Giữ ID) -->
+            <TextView android:id="@+id/cb_float_tele_v2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_float_tele_v2_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/cb_float_tele" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_float_tele_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/cb_float_delay_ping" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_float_delay_ping_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <LinearLayout android:id="@+id/group_tele_options" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <LinearLayout android:id="@+id/group_tele_speed_options" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_tele_replay_delay_value" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <SeekBar android:id="@+id/seek_tele_replay_delay" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_tele_speed_burst_value" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <SeekBar android:id="@+id/seek_tele_speed_burst" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_tele_speed_sleep_value" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <SeekBar android:id="@+id/seek_tele_speed_sleep" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/tv_tele_speed_catchup_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <TextView android:id="@+id/cb_tele_speed_catchup" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
         </LinearLayout>
 
-        <!-- CARD: TÂM ẢO (NEON PINK) -->
+        <!-- SIZE & ĐỘ MỜ TÂM ẢO CARD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="14dp"
-            android:backgroundTint="#110B1F">
+            android:padding="14dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="[ SIZE &amp; TÂM ẢO ]"
                 android:textColor="#ec4899"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
-                android:layout_marginBottom="12dp"
                 android:shadowColor="#ec4899"
-                android:shadowRadius="10" />
-            
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <TextView android:layout_width="70dp" android:layout_height="wrap_content" android:text="SIZE" android:textColor="#94a3b8" android:fontFamily="monospace"/>
-                <SeekBar android:id="@+id/seek_crosshair_size" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:progressDrawable="@drawable/seekbar_purple_progress" android:thumb="@drawable/seekbar_purple_thumb"/>
-                <TextView android:id="@+id/tv_crosshair_size_value" android:layout_width="50dp" android:layout_height="wrap_content" android:gravity="right" android:textColor="#ec4899" android:textStyle="bold" android:fontFamily="monospace"/>
+                android:shadowRadius="8" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="74dp"
+                    android:layout_height="wrap_content"
+                    android:text="SIZE"
+                    android:textColor="#778094"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <SeekBar
+                    android:id="@+id/seek_crosshair_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/seekbar_purple_progress"
+                    android:thumb="@drawable/seekbar_purple_thumb" />
+
+                <TextView
+                    android:id="@+id/tv_crosshair_size_value"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#ec4899"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <TextView android:layout_width="70dp" android:layout_height="wrap_content" android:text="ĐỘ MỜ" android:textColor="#94a3b8" android:fontFamily="monospace"/>
-                <SeekBar android:id="@+id/seek_crosshair_alpha" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:progressDrawable="@drawable/seekbar_purple_progress" android:thumb="@drawable/seekbar_purple_thumb"/>
-                <TextView android:id="@+id/tv_crosshair_alpha_value" android:layout_width="50dp" android:layout_height="wrap_content" android:gravity="right" android:textColor="#ec4899" android:textStyle="bold" android:fontFamily="monospace"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="74dp"
+                    android:layout_height="wrap_content"
+                    android:text="ĐỘ MỜ"
+                    android:textColor="#778094"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <SeekBar
+                    android:id="@+id/seek_crosshair_alpha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/seekbar_purple_progress"
+                    android:thumb="@drawable/seekbar_purple_thumb" />
+
+                <TextView
+                    android:id="@+id/tv_crosshair_alpha_value"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#ec4899"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="44dp" android:gravity="center_vertical" android:layout_marginTop="8dp" android:background="#0A0518" android:paddingHorizontal="12dp">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="HIỂN THỊ TÂM ẢO" android:textColor="#e2e8f0" android:fontFamily="monospace"/>
-                <TextView android:id="@+id/tv_crosshair_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#64748b" android:layout_marginRight="8dp" android:fontFamily="monospace"/>
-                <TextView android:id="@+id/cb_crosshair" style="@style/ModernSwitchSmall"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HIỂN THỊ TÂM ẢO"
+                    android:textColor="#C4CAE0"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/tv_crosshair_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:textColor="#778094"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/cb_crosshair"
+                    style="@style/ModernSwitchSmall" />
             </LinearLayout>
         </LinearLayout>
 
-        <!-- CARD: ĐIỀU CHỈNH NÚT NỔI -->
+        <!-- ĐIỀU CHỈNH NÚT NỔI CARD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:backgroundTint="#110B1F">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[ CONFIG HUD ]" android:textColor="#06b6d4" android:textStyle="bold" android:fontFamily="monospace" android:layout_marginBottom="8dp"/>
+            android:padding="14dp">
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <TextView android:layout_width="50dp" android:layout_height="wrap_content" android:text="Cỡ:" android:textColor="#94a3b8" android:fontFamily="monospace"/>
-                <SeekBar android:id="@+id/seek_float_size" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:progressDrawable="@drawable/seekbar_float_progress" android:thumb="@drawable/seekbar_float_thumb"/>
-                <TextView android:id="@+id/tv_float_size_value" android:layout_width="50dp" android:layout_height="wrap_content" android:gravity="right" android:textColor="#06b6d4" android:textStyle="bold" android:fontFamily="monospace"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center_vertical"
+                android:text="[ CONFIG HUD ]"
+                android:textColor="#06b6d4"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:shadowColor="#06b6d4"
+                android:shadowRadius="8" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cỡ:"
+                    android:textColor="#778094"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <SeekBar
+                    android:id="@+id/seek_float_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/seekbar_float_progress"
+                    android:thumb="@drawable/seekbar_float_thumb" />
+
+                <TextView
+                    android:id="@+id/tv_float_size_value"
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#06b6d4"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <TextView android:layout_width="50dp" android:layout_height="wrap_content" android:text="Mờ:" android:textColor="#94a3b8" android:fontFamily="monospace"/>
-                <SeekBar android:id="@+id/seek_float_alpha" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:progressDrawable="@drawable/seekbar_float_progress" android:thumb="@drawable/seekbar_float_thumb"/>
-                <TextView android:id="@+id/tv_float_alpha_value" android:layout_width="50dp" android:layout_height="wrap_content" android:gravity="right" android:textColor="#06b6d4" android:textStyle="bold" android:fontFamily="monospace"/>
-            </LinearLayout>
-            
-            <!-- MASK OPTIONS -->
-            <LinearLayout android:id="@+id/group_mask_options" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp">
-                 <LinearLayout android:layout_width="match_parent" android:layout_height="44dp" android:gravity="center_vertical" android:background="#0A0518" android:paddingHorizontal="12dp">
-                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MASK BAR" android:textColor="#e2e8f0" android:fontFamily="monospace"/>
-                     <TextView android:id="@+id/tv_mask_bar_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#64748b" android:layout_marginRight="8dp" android:fontFamily="monospace"/>
-                     <TextView android:id="@+id/cb_mask_bar" style="@style/ModernSwitchSmall"/>
-                 </LinearLayout>
-                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                     <TextView android:layout_width="70dp" android:layout_height="wrap_content" android:text="ĐỘ DÀY" android:textColor="#94a3b8" android:textSize="11sp" android:fontFamily="monospace"/>
-                     <SeekBar android:id="@+id/seek_mask_bar_thickness" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:progressDrawable="@drawable/seekbar_float_progress" android:thumb="@drawable/seekbar_float_thumb"/>
-                     <TextView android:id="@+id/tv_mask_bar_thickness_value" android:layout_width="50dp" android:layout_height="wrap_content" android:gravity="right" android:textColor="#06b6d4" android:textStyle="bold" android:fontFamily="monospace"/>
-                 </LinearLayout>
-                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                     <TextView android:layout_width="70dp" android:layout_height="wrap_content" android:text="ĐỘ DÀI" android:textColor="#94a3b8" android:textSize="11sp" android:fontFamily="monospace"/>
-                     <SeekBar android:id="@+id/seek_mask_bar_length" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:progressDrawable="@drawable/seekbar_float_progress" android:thumb="@drawable/seekbar_float_thumb"/>
-                     <TextView android:id="@+id/tv_mask_bar_length_value" android:layout_width="50dp" android:layout_height="wrap_content" android:gravity="right" android:textColor="#06b6d4" android:textStyle="bold" android:fontFamily="monospace"/>
-                 </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mờ:"
+                    android:textColor="#778094"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <SeekBar
+                    android:id="@+id/seek_float_alpha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/seekbar_float_progress"
+                    android:thumb="@drawable/seekbar_float_thumb" />
+
+                <TextView
+                    android:id="@+id/tv_float_alpha_value"
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#06b6d4"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
             </LinearLayout>
 
-            <TextView android:id="@+id/cb_auto_stop_tele" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_auto_stop_tele_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/cb_dev_mode" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
-            <TextView android:id="@+id/tv_dev_mode_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+            <LinearLayout
+                android:id="@+id/group_mask_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_mask"
+                        android:textColor="#F7F7FB"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace" />
+
+                    <TextView
+                        android:id="@+id/tv_mask_bar_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:textColor="#778094"
+                        android:textSize="10sp"
+                        android:fontFamily="monospace" />
+
+                    <TextView
+                        android:id="@+id/cb_mask_bar"
+                        style="@style/ModernSwitchSmall" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/match_mask_thickness"
+                        android:textColor="#778094"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace" />
+
+                    <SeekBar
+                        android:id="@+id/seek_mask_bar_thickness"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:progressDrawable="@drawable/seekbar_float_progress"
+                        android:thumb="@drawable/seekbar_float_thumb" />
+
+                    <TextView
+                        android:id="@+id/tv_mask_bar_thickness_value"
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="#06b6d4"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/match_mask_length"
+                        android:textColor="#778094"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace" />
+
+                    <SeekBar
+                        android:id="@+id/seek_mask_bar_length"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:progressDrawable="@drawable/seekbar_float_progress"
+                        android:thumb="@drawable/seekbar_float_thumb" />
+
+                    <TextView
+                        android:id="@+id/tv_mask_bar_length_value"
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="#06b6d4"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cb_auto_stop_tele"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_auto_stop_tele_status"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/cb_dev_mode"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_dev_mode_status"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
         </LinearLayout>
-
+        
         <!-- 🚨 2 NÚT ẨN ĐỂ TRÁNH LỖI CRASH CODE JAVA CŨ 🚨 -->
         <Button
             android:id="@+id/btn_start"
