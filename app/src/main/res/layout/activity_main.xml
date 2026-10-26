@@ -56,7 +56,7 @@
                         android:textStyle="bold"
                         android:fontFamily="monospace"
                         android:shadowColor="#00f3ff"
-                        android:shadowRadius="15" />
+                        android:shadowRadius="8" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SYS_VER: 1.101_HUD"
-                    android:textColor="#555555"
+                    android:textColor="#888888"
                     android:textSize="10sp"
                     android:fontFamily="monospace"
                     android:layout_marginTop="2dp" />
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="8dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                 android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:shadowColor="#ff007f"
-                android:shadowRadius="6" />
+                android:shadowRadius="4" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -133,12 +133,12 @@
                     android:textColor="#00f3ff"
                     android:textSize="24sp"
                     android:shadowColor="#00f3ff"
-                    android:shadowRadius="10" />
+                    android:shadowRadius="6" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="OVERLAY"
-                    android:textColor="#CCCCCC"
+                    android:textColor="#E0E0E0"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
                     android:layout_marginTop="4dp" />
@@ -172,12 +172,12 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:shadowColor="#00f3ff"
-                    android:shadowRadius="10" />
+                    android:shadowRadius="6" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TUNNEL"
-                    android:textColor="#CCCCCC"
+                    android:textColor="#E0E0E0"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
                     android:layout_marginTop="4dp" />
@@ -210,12 +210,12 @@
                     android:textColor="#00f3ff"
                     android:textSize="24sp"
                     android:shadowColor="#00f3ff"
-                    android:shadowRadius="10" />
+                    android:shadowRadius="6" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="NOTIFY"
-                    android:textColor="#CCCCCC"
+                    android:textColor="#E0E0E0"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
                     android:layout_marginTop="4dp" />
@@ -234,13 +234,13 @@
             <TextView android:id="@+id/cb_storage" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
         </LinearLayout>
 
-        <!-- SECTION 2: TARGET APP SELECTION (FIXED CRASH) -->
+        <!-- SECTION 2: TARGET APP SELECTION -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="8dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -250,7 +250,7 @@
                 android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:shadowColor="#ff007f"
-                android:shadowRadius="6" />
+                android:shadowRadius="4" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -260,36 +260,24 @@
                 android:layout_marginLeft="8dp"/>
         </LinearLayout>
 
+        <!-- CHỈ CÒN 2 NÚT FF VÀ FF MAX -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:orientation="horizontal"
             android:layout_marginBottom="16dp">
             
-            <!-- Sử dụng Button để khớp với ép kiểu (Cast) bên Java -->
-            <Button
-                android:id="@+id/btn_show_floating"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginRight="4dp"
-                android:background="@drawable/bg_top_action"
-                android:text="FREE"
-                android:textColor="#00f3ff"
-                android:textSize="11sp"
-                android:fontFamily="monospace"
-                android:stateListAnimator="@null" />
-
             <Button
                 android:id="@+id/btn_ff_normal"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginHorizontal="4dp"
+                android:layout_marginRight="6dp"
                 android:background="@drawable/bg_top_action"
-                android:text="FF"
+                android:text="FF NORMAL"
                 android:textColor="#00f3ff"
-                android:textSize="11sp"
+                android:textSize="12sp"
+                android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:stateListAnimator="@null" />
 
@@ -298,11 +286,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="6dp"
                 android:background="@drawable/bg_top_action"
                 android:text="FF MAX"
                 android:textColor="#00f3ff"
-                android:textSize="11sp"
+                android:textSize="12sp"
+                android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:stateListAnimator="@null" />
         </LinearLayout>
@@ -349,15 +338,14 @@
                     android:textStyle="bold"
                     android:fontFamily="monospace"
                     android:shadowColor="#ff007f"
-                    android:shadowRadius="15" />
+                    android:shadowRadius="8" />
                 
-                <!-- ID tv_selected_app cực kỳ quan trọng, tránh xóa -->
                 <TextView
                     android:id="@+id/tv_selected_app"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AWAITING_TARGET"
-                    android:textColor="#555555"
+                    android:textColor="#888888"
                     android:textSize="10sp"
                     android:fontFamily="monospace"
                     android:layout_marginTop="2dp" />
@@ -369,7 +357,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginTop="4dp">
                     <View android:layout_width="6dp" android:layout_height="6dp" android:background="#00f3ff" android:layout_marginRight="6dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HOOK: READY" android:textColor="#555555" android:textSize="9sp" android:fontFamily="monospace"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HOOK: READY" android:textColor="#888888" android:textSize="9sp" android:fontFamily="monospace"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -378,8 +366,6 @@
                 android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:background="@drawable/dot_off" />
-                
-            <!-- ID dot_app cực kỳ quan trọng, tránh xóa -->
             <View android:id="@+id/dot_app" android:layout_width="0dp" android:layout_height="0dp" />
         </LinearLayout>
 
@@ -389,7 +375,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="8dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -399,7 +385,7 @@
                 android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:shadowColor="#ff007f"
-                android:shadowRadius="6" />
+                android:shadowRadius="4" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -514,7 +500,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="8dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -524,7 +510,7 @@
                 android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:shadowColor="#ff007f"
-                android:shadowRadius="6" />
+                android:shadowRadius="4" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -566,7 +552,7 @@
             </LinearLayout>
             <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:layout_marginTop="4dp">
                 <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="ENABLE CROSSHAIR" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="monospace"/>
-                <TextView android:id="@+id/tv_crosshair_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#555555" android:textSize="10sp" android:layout_marginRight="6dp" android:fontFamily="monospace"/>
+                <TextView android:id="@+id/tv_crosshair_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#888888" android:textSize="10sp" android:layout_marginRight="6dp" android:fontFamily="monospace"/>
                 <TextView android:id="@+id/cb_crosshair" style="@style/ModernSwitchSmall"/>
             </LinearLayout>
 
@@ -602,7 +588,7 @@
                 android:layout_marginTop="8dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MASK BAR" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="monospace"/>
-                    <TextView android:id="@+id/tv_mask_bar_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#555555" android:textSize="10sp" android:layout_marginRight="6dp" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tv_mask_bar_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#888888" android:textSize="10sp" android:layout_marginRight="6dp" android:fontFamily="monospace"/>
                     <TextView android:id="@+id/cb_mask_bar" style="@style/ModernSwitchSmall"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
@@ -623,7 +609,12 @@
             <TextView android:id="@+id/tv_dev_mode_status" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
         </LinearLayout>
 
-        <!-- 🚨 2 NÚT ẨN BẢO HIỂM 🚨 -->
+        <!-- 🚨 3 NÚT ẨN BẢO HIỂM (Bắt buộc phải có để code Java không bị văng) 🚨 -->
+        <Button
+            android:id="@+id/btn_show_floating"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
         <Button
             android:id="@+id/btn_start"
             android:layout_width="0dp"
