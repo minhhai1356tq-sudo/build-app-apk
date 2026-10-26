@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:letterSpacing="0.12"
-                    android:text="Yanz Mod"
+                    android:text="Minizo Mod"
                     android:textColor="#F8FAFC"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -993,40 +993,6 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:visibility="gone" />
-        </LinearLayout>
-
-        <!-- KHỞI CHẠY & DỪNG BUTTONS -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_start"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_marginRight="7dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_card"
-                android:backgroundTint="#00E5FF"
-                android:text="Khởi Chạy"
-                android:textColor="#003344"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_stop"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_marginLeft="7dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_card"
-                android:backgroundTint="#2C0A4D"
-                android:text="Dừng"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
