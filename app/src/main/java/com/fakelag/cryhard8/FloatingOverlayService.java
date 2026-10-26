@@ -418,7 +418,7 @@ public class FloatingOverlayService extends Service {
 
     private TextView makeTopBanner() {
         TextView tv = new TextView(this);
-        tv.setText("SunnyMod");
+        tv.setText("MhaiMod");
         tv.setTextSize(12f);
         tv.setTypeface(Typeface.DEFAULT_BOLD);
         tv.setSingleLine(true);
@@ -458,7 +458,7 @@ public class FloatingOverlayService extends Service {
 
     private View makeMaskBar() {
         TextView view = new TextView(this);
-        view.setText(" ThuyLinh cte vkl ");
+        view.setText(" Minizo Mod ");
         view.setTextColor(Color.WHITE);
         view.setTextSize(12f);
         view.setTypeface(Typeface.DEFAULT_BOLD);
